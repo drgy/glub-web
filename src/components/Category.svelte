@@ -14,8 +14,6 @@
 	}
 
 	function toggleLibrary(name: string) {
-		console.log('toggle');
-
 		const version = libraryData[category][name].selectedVersion;
 		libraries.toggle(name, version);
 		libraryData[category][name].selected = !libraryData[category][name].selected;
@@ -32,11 +30,13 @@
 		{#each Object.entries(libraryList) as [ name, library ]}
 			<li class="{libraryData[category][name].selected ? 'selected' : '' }">
 				<span on:click="{() => toggleLibrary(name)}">{name}</span>
-				<select bind:value={libraryData[category][name].selectedVersion} on:change="{() => updateLibrary(name)}">
-					{#each library.versions as version}
-						<option value={version}>{parseVersion(version)}</option>
-					{/each}
-				</select>
+				{#if library.versions.length}
+					<select bind:value={libraryData[category][name].selectedVersion} on:change="{() => updateLibrary(name)}">
+						{#each library.versions as version}
+							<option value={version}>{parseVersion(version)}</option>
+						{/each}
+					</select>
+				{/if}
 			</li>
 		{/each}
 	</ul>

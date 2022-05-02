@@ -60,7 +60,7 @@
 	}
 
 	async function downloadCmake() {
-		let cmake = await fetchData().text();
+		let cmake = await (await fetchData()).text();
 
 		const element = document.createElement('a');
 		element.setAttribute('href', `data:text/plain;charset=utf-8,${encodeURIComponent(cmake)}`);

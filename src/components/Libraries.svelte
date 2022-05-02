@@ -8,7 +8,7 @@
 
 		Object.values(libraryData).forEach(category => {
 			Object.values(category).forEach(library => {
-				library.selectedVersion = library.versions[0];
+				library.selectedVersion = library.versions[0] || '0.0.0';
 				library.selected = false;
 			});
 		});

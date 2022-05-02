@@ -29,7 +29,9 @@ function createLibraries() {
 				return [ ...libraries, { name, version }];
 			}
 
-			return libraries.splice(index, 1);
+			libraries.splice(index, 1)
+
+			return libraries;
 		})
 	};
 }
