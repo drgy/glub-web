@@ -1,2 +1,27 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Metadata from "../components/Metadata.svelte";
+	import Controls from "../components/Controls.svelte";
+	import Libraries from "../components/Libraries.svelte";
+</script>
+
+<div class="container">
+	<div>
+		<Metadata />
+		<Libraries />
+	</div>
+	<div>
+		<Controls />
+	</div>
+</div>
+
+<style lang="scss">
+	.container {
+		display: flex;
+		gap: 22px;
+
+		& > div {
+			flex-grow: 1;
+			flex-basis: 0;
+		}
+	}
+</style>
