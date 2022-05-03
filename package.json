@@ -11,7 +11,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
@@ -22,7 +22,8 @@
     "@types/jszip": "^3.4.1",
     "file-saver": "^2.0.5",
     "semver": "^7.3.7",
-    "@types/semver": "^7.3.9"
+    "@types/semver": "^7.3.9",
+    "gh-pages": "^3.2.3"
   },
   "type": "module"
 }
