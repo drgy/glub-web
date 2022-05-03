@@ -9,7 +9,7 @@
     "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "deploy": "npm run build | node update_paths.js | git subtree push --prefix build/ origin gh-pages"
+    "deploy": "npm run build && node update_paths.js && git subtree split --prefix build/ -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
