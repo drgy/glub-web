@@ -1,6 +1,7 @@
 <script>
 	import Metadata from "../components/Metadata.svelte";
-	import Controls from "../components/Controls.svelte";
+	import Download from "../components/Download.svelte";
+	import Contribute from "../components/Contribute.svelte";
 	import Libraries from "../components/Libraries.svelte";
 </script>
 
@@ -10,7 +11,14 @@
 		<Libraries />
 	</div>
 	<div>
-		<Controls />
+		<div class="container">
+			<div>
+				<Download />
+			</div>
+			<div>
+				<Contribute />
+			</div>
+		</div>
 	</div>
 </div>
 

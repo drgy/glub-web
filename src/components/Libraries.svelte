@@ -36,7 +36,6 @@
 
 		& > * {
 			flex: 1;
-			max-width: calc(50% - 22px);
 		}
 	}
 </style>

@@ -92,10 +92,19 @@
 	}
 </script>
 
-<Container title="Controls" >
+<Container title="Download">
 	<div class="container">
+		<img src="img/zip.svg" alt="Download project" on:click={downloadProject} />
 		<img src="img/cmake.svg" alt="Download CMakeLists.txt" on:click={downloadCmake} />
-		<img src="img/download.svg" alt="Download project" on:click={downloadProject} />
+
+		{#if status === 'compatible'}
+			<img src="img/linux.png" alt="Linux compatible" />
+		{/if}
+
+		{#if status === 'compatible'}
+			<img src="img/windows.svg" alt="Windows compatible" />
+		{/if}
+
 		<span>{status}</span>
 	</div>
 </Container>
@@ -103,8 +112,6 @@
 <style lang="scss">
 	.container {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 40px;
 		justify-content: space-between;
 
 		& > * {
@@ -112,9 +119,10 @@
 		}
 
 		img {
-			height: 60px;
+			height: 40px;
 			padding: 8px;
 			cursor: pointer;
+			fill: $text-main;
 		}
 	}
 </style>

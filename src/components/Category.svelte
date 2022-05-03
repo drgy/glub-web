@@ -20,7 +20,12 @@
 	}
 
 	function parseVersion(version: string): string {
-		return semver.clean(version.replace(/[^0-9\.]/g, '').replace(/[^0-9]*$/, '').replace(/(?<=^[^0-9]*[0-9]+)\.?$/, '.0').replace(/(?<=^[^0-9]*[0-9]+\.[0-9]+)\.?$/, '.0'));
+		return semver.clean(version
+				.replace(/[^0-9\.]/g, '')
+				.replace(/[^0-9]*$/, '')
+				.replace(/(?<=^[^0-9]*[0-9]+)\.?$/, '.0')
+				.replace(/(?<=^[^0-9]*[0-9]+\.[0-9]+)\.?$/, '.0')
+				.replace(/(?<=[0-9]+\.[0-9]+\.[0-9]+)(\.[0-9]+)*/, ''));
 	}
 
 </script>
@@ -30,7 +35,7 @@
 		{#each Object.entries(libraryList) as [ name, library ]}
 			<li class="{libraryData[category][name].selected ? 'selected' : '' }">
 				<span on:click="{() => toggleLibrary(name)}">{name}</span>
-				{#if library.versions.length}
+				{#if library.versions[0] !== '0.0.0'}
 					<select bind:value={libraryData[category][name].selectedVersion} on:change="{() => updateLibrary(name)}">
 						{#each library.versions as version}
 							<option value={version}>{parseVersion(version)}</option>
@@ -45,6 +50,7 @@
 <style lang="scss">
   ul {
     padding: 0;
+	  margin: 0;
   }
 
   li {
