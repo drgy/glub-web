@@ -6,7 +6,7 @@ publish(
 			branch: 'gh-pages',
 			repo: 'https://github.com/drgy/glub-web.git',
 			user: {
-				name: 'Jakub Drgoň',
+				name: 'drgy',
 				email: 'drgonjak@gmail.com'
 			},
 			dotfiles: true
