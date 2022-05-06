@@ -4,9 +4,9 @@
 
 <Container title="Contribute">
 	<div class="container">
-		<a href="#" target="_blank"><img src="img/github.svg" alt="GitHub repository" /></a>
-		<a href="#" target="_blank"><img src="img/bug.svg" alt="Bug report" /></a>
-		<a href="#" target="_blank"><img src="img/request.svg" alt="Library request" /></a>
+		<a href="https://github.com/drgy/glub" target="_blank"><img src="img/github.svg" alt="GitHub repository" /></a>
+		<a href="https://github.com/drgy/glub/issues/new?assignees=&labels=compatibility+mismatch&template=compatibility-mismatch.md&title=Compatibility+mismatch+%5Binsert+names+of+selected+libraries%5D" target="_blank"><img src="img/bug.svg" alt="Bug report" /></a>
+		<a href="https://github.com/drgy/glub/issues/new?assignees=&labels=library+request&template=request-a-library.md&title=Library+request+%5Binsert+library+name%5D" target="_blank"><img src="img/request.svg" alt="Library request" /></a>
 	</div>
 </Container>
 
