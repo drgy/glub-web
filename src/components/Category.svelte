@@ -53,9 +53,17 @@
 	  margin: 0;
   }
 
+  select {
+	  width: 80px;
+  }
+
   li {
     display: flex;
     justify-content: space-between;
+	  padding: 2px 8px;
+	  margin: 4px 0;
+	  border-radius: 4px;
+    transition: background-color 180ms ease;
 
     &.selected {
       background-color: $blue;

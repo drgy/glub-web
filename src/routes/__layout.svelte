@@ -51,6 +51,20 @@
 		  font-family: 'Share Tech Mono', monospace !important;
 	  }
 
+    ::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: $text-main;
+    }
+
     input[type="text"] {
       background-color: $background;
       border: none;
@@ -61,10 +75,14 @@
       margin: 4px 0;
       font-family: 'Share Tech Mono', monospace !important;
 	    font-size: 16px;
+
+	    &:active, &:focus {
+		    border-bottom-color: $blue;
+	    }
     }
 
 	  select {
-      background-color: $background;
+      background-color: rgba(0, 0, 0, 0);
       border: none;
       border-bottom: 2px solid $text-main;
       outline: none;
@@ -73,6 +91,10 @@
       margin: 4px 0;
       font-family: 'Share Tech Mono', monospace !important;
       font-size: 16px;
+
+      option {
+        background-color: $background;
+      }
 	  }
   }
 
