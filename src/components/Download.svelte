@@ -3,6 +3,7 @@
 	import { name, version, description, resPath, srcPath, libraries } from '../store.ts';
 	import JSZip from 'jszip';
 	import * as FileSaver from 'file-saver';
+	import { Jumper } from 'svelte-loading-spinners'
 
 	const defaults = {
 		name: 'glub',
@@ -20,6 +21,7 @@
 	});
 
 	function debounce(libraries) {
+		status = 'loading';
 		clearTimeout(timer);
 		timer = setTimeout(() => {
 			getStatus(libraries);
@@ -97,15 +99,25 @@
 		<img src="img/zip.svg" alt="Download project" on:click={downloadProject} />
 		<img src="img/cmake.svg" alt="Download CMakeLists.txt" on:click={downloadCmake} />
 
-		{#if status === 'compatible'}
+		{#if status === 'loading'}
+			<Jumper color="#c5c8c6"></Jumper>
+		{/if}
+
+		{#if status === 'incompatible'}
+			<img src="img/x.svg" alt="Incompatible" />
+		{/if}
+
+		{#if status === 'not_tested'}
+			<img src="img/question.svg" alt="Not tested" />
+		{/if}
+
+		{#if (status === 'compatible' || status === 'linux_compatible')}
 			<img src="img/linux.png" alt="Linux compatible" />
 		{/if}
 
-		{#if status === 'compatible'}
+		{#if (status === 'compatible' || status === 'windows_compatible')}
 			<img src="img/windows.svg" alt="Windows compatible" />
 		{/if}
-
-		<span>{status}</span>
 	</div>
 </Container>
 
