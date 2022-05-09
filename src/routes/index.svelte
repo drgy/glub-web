@@ -6,25 +6,44 @@
 	import UserGuide from "../components/UserGuide.svelte";
 </script>
 
-<div class="container">
+<div class="main-container">
 	<div>
 		<Metadata />
 		<Libraries />
 	</div>
 	<div>
-		<div class="container">
-			<div>
-				<Download />
+		<div>
+			<div class="container">
+				<div>
+					<Download />
+				</div>
+				<div>
+					<Contribute />
+				</div>
 			</div>
-			<div>
-				<Contribute />
-			</div>
+			<UserGuide />
 		</div>
-		<UserGuide />
 	</div>
 </div>
 
 <style lang="scss">
+	.main-container {
+		position: relative;
+
+		& > div {
+			display: inline-block;
+			width: calc(50% - 11px);
+
+			&:first-of-type {
+				float: left;
+			}
+
+      &:last-of-type {
+        float: right;
+      }
+		}
+	}
+
 	.container {
 		display: flex;
 		gap: 22px;

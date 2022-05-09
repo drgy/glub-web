@@ -30,5 +30,6 @@
     img {
 		    display: block;
 		    margin: 32px auto 0;
+		    max-width: 100%;
     }
 </style>
