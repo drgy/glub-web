@@ -15,8 +15,12 @@
 
 	.container {
 		max-width: 1320px;
-		margin: 32px auto 72px;
+		margin: 0 auto;
 		position: relative;
+
+		@media (max-width: $lg-max) {
+			padding: 20px 20px 40px;
+    }
 	}
 
   .logo {
@@ -24,12 +28,23 @@
 	  display: inline-block;
 	  top: 0;
 	  vertical-align: middle;
+
+	  @media (max-width: $lg-max) {
+		  margin: 0 auto;
+		  display: block;
+	  }
   }
 
   .title {
 	  margin-left: 24px;
 	  display: inline-block;
 	  vertical-align: middle;
+
+	  @media (max-width: $lg-max) {
+		  text-align: center;
+		  margin: 40px 0 0;
+		  width: 100%;
+	  }
   }
 
   nav {
@@ -42,6 +57,11 @@
     font-size: 56px;
     font-weight: 300;
 	  line-height: 90px;
+
+	  @media (max-width: $lg-max) {
+		  font-size: 40px;
+		  line-height: 40px;
+	  }
   }
 
   :global {

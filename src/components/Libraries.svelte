@@ -37,5 +37,9 @@
 		& > * {
 			flex: 1;
 		}
+
+		@media (max-width: $lg-max) {
+			display: block;
+		}
 	}
 </style>

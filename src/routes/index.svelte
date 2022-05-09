@@ -43,6 +43,11 @@
       &:last-of-type {
         float: right;
       }
+
+			@media (max-width: $lg-max) {
+				display: block;
+				width: 100%;
+      }
 		}
 	}
 
@@ -54,5 +59,9 @@
 			flex-grow: 1;
 			flex-basis: 0;
 		}
+
+    @media (max-width: $lg-max) {
+      display: block;
+    }
 	}
 </style>
