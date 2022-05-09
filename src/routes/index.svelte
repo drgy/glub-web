@@ -3,6 +3,7 @@
 	import Download from "../components/Download.svelte";
 	import Contribute from "../components/Contribute.svelte";
 	import Libraries from "../components/Libraries.svelte";
+	import UserGuide from "../components/UserGuide.svelte";
 </script>
 
 <div class="container">
@@ -19,6 +20,7 @@
 				<Contribute />
 			</div>
 		</div>
+		<UserGuide />
 	</div>
 </div>
 

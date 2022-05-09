@@ -96,6 +96,40 @@
         background-color: $background;
       }
 	  }
+
+	  button {
+      background-color: rgba(0, 0, 0, 0);
+		  border: 2px solid $text-main;
+		  outline: none;
+		  color: $text-main;
+		  padding: 14px 24px;
+      transition: all 180ms ease;
+		  border-radius: 6px;
+      font-family: 'Share Tech Mono', monospace !important;
+		  font-size: 18px;
+		  font-weight: 500;
+		  cursor: pointer;
+
+		  &:hover {
+			  border-color: $blue;
+			  color: $blue;
+		  }
+	  }
+
+    .vcenter {
+      position: relative;
+      display: inline-block;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+	  .code {
+		  margin: 8px;
+		  padding: 6px 12px;
+			background-color: $light-gray;
+		  border-radius: 6px;
+		  width: fit-content;
+	  }
   }
 
 </style>

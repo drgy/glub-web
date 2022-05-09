@@ -30,7 +30,7 @@
 
 </script>
 
-<Container title={category}>
+<Container title={category} data="category">
 	<ul>
 		{#each Object.entries(libraryList) as [ name, library ]}
 			<li class="{libraryData[category][name].selected ? 'selected' : '' }">
