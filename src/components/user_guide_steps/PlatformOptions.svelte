@@ -1,24 +1,9 @@
 <script>
 	import NavigationButton from "./NavigationButton.svelte";
-	import {onMount} from 'svelte';
-
-	let downloadContainer;
-
-	export function select() {
-		downloadContainer.classList.add('highlight-section');
-	}
-
-	export function deselect() {
-		downloadContainer.classList.remove('highlight-section');
-	}
 
 	export let next;
 	export let previous;
 	export let goto;
-
-	onMount(() => {
-		downloadContainer = document.getElementById('download');
-	});
 </script>
 
 <div class="container">
