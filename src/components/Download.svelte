@@ -1,5 +1,6 @@
 <script>
 	import Container from './Container.svelte';
+	import Tooltip from "./Tooltip.svelte";
 	import { name, version, description, resPath, srcPath, libraries } from '../store.ts';
 	import JSZip from 'jszip';
 	import * as FileSaver from 'file-saver';
@@ -96,27 +97,40 @@
 
 <Container title="Download">
 	<div class="container">
-		<img src="img/zip.svg" alt="Download project" on:click={downloadProject} />
-		<img src="img/cmake.svg" alt="Download CMakeLists.txt" on:click={downloadCmake} />
+		<Tooltip text="Download project">
+			<img src="img/zip.svg" alt="Download project" on:click={downloadProject} />
+		</Tooltip>
+
+		<Tooltip text="Download CMakeLists.txt">
+			<img src="img/cmake.svg" alt="Download CMakeLists.txt" on:click={downloadCmake} />
+		</Tooltip>
 
 		{#if status === 'loading'}
-			<Jumper color="#c5c8c6"></Jumper>
+			<Jumper color="#c5c8c6" duration="1.5s" ></Jumper>
 		{/if}
 
 		{#if status === 'incompatible'}
-			<img src="img/x.svg" alt="Incompatible" />
+			<Tooltip text="Selected libraries are not compatible">
+				<img src="img/x.svg" alt="Incompatible" />
+			</Tooltip>
 		{/if}
 
 		{#if status === 'not_tested'}
-			<img src="img/question.svg" alt="Not tested" />
+			<Tooltip text="Selected libraries were not tested">
+				<img src="img/question.svg" alt="Not tested" />
+			</Tooltip>
 		{/if}
 
 		{#if (status === 'compatible' || status === 'linux_compatible')}
-			<img src="img/linux.png" alt="Linux compatible" />
+			<Tooltip text="Libraries are compatible on Linux">
+				<img src="img/linux.png" alt="Linux compatible" />
+			</Tooltip>
 		{/if}
 
 		{#if (status === 'compatible' || status === 'windows_compatible')}
-			<img src="img/windows.svg" alt="Windows compatible" />
+			<Tooltip text="Libraries are compatible on Windows">
+				<img src="img/windows.svg" alt="Windows compatible" />
+			</Tooltip>
 		{/if}
 	</div>
 </Container>
