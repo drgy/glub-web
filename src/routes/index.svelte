@@ -4,6 +4,7 @@
 	import Contribute from "../components/Contribute.svelte";
 	import Libraries from "../components/Libraries.svelte";
 	import UserGuide from "../components/UserGuide.svelte";
+	import Preview from "../components/Preview.svelte";
 </script>
 
 <div class="main-container">
@@ -22,6 +23,7 @@
 				</div>
 			</div>
 			<UserGuide />
+			<Preview />
 		</div>
 	</div>
 </div>

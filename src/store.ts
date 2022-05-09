@@ -1,5 +1,7 @@
 import { writable } from 'svelte/store';
 
+export const lastLibraryUrl = writable('');
+
 export const name = writable('');
 export const version = writable('');
 export const description = writable('');

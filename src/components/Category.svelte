@@ -1,22 +1,24 @@
 <script lang="ts">
 	import Container from "./Container.svelte";
 	import * as semver from "semver";
-	import { libraries } from '../store.ts';
+	import { libraries, lastLibraryUrl } from '../store.ts';
 
 	export let category;
 	export let libraryList;
 	export let libraryData;
 
-	function updateLibrary(name: string) {
+	function updateLibrary(name: string, url: string) {
 		const version = libraryData[category][name].selectedVersion;
 		libraries.updateVersion(name, version);
 		libraryData[category][name].selected = true;
+		lastLibraryUrl.set(url);
 	}
 
-	function toggleLibrary(name: string) {
+	function toggleLibrary(name: string, url: string) {
 		const version = libraryData[category][name].selectedVersion;
 		libraries.toggle(name, version);
 		libraryData[category][name].selected = !libraryData[category][name].selected;
+		lastLibraryUrl.set(url);
 	}
 
 	function parseVersion(version: string): string {
@@ -34,9 +36,9 @@
 	<ul>
 		{#each Object.entries(libraryList) as [ name, library ]}
 			<li class="{libraryData[category][name].selected ? 'selected' : '' }">
-				<span on:click="{() => toggleLibrary(name)}">{name}</span>
+				<span on:click="{() => toggleLibrary(name, library.url)}">{name}</span>
 				{#if library.versions[0] !== '0.0.0'}
-					<select bind:value={libraryData[category][name].selectedVersion} on:change="{() => updateLibrary(name)}">
+					<select bind:value={libraryData[category][name].selectedVersion} on:change="{() => updateLibrary(name, library.url)}">
 						{#each library.versions as version}
 							<option value={version}>{parseVersion(version)}</option>
 						{/each}
