@@ -65,11 +65,17 @@
 	  padding: 2px 8px;
 	  margin: 4px 0;
 	  border-radius: 4px;
-    transition: background-color 180ms ease;
+    transition: all 180ms ease;
+	  border: 2px solid transparent;
 
     &.selected {
-      background-color: $blue;
+      background-color: $blue !important;
     }
+
+	  &:hover {
+		  border: 2px solid $blue;
+		  background-color: $transparent-blue;
+	  }
 
     span {
       flex: 1;
