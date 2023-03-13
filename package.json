@@ -12,8 +12,8 @@
     "deploy": "git add build/* && git commit -m \"Update build\" && git push && git subtree split --prefix build/ -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-static": "1.0.0-next.29",
+    "@sveltejs/kit": "1.0.0-next.324",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
     "svelte-preprocess": "^4.10.1",
