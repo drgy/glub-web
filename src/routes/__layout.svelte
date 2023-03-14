@@ -9,9 +9,37 @@
 	</nav>
 
 	<slot></slot>
+
+	<div class="footer">
+		<a href="https://drgy.dev/" target="_blank">
+			<img src="img/drgy-logo.svg" />
+			<div>Copyright © 2023, Jakub Drgoň</div>
+		</a>
+	</div>
 </div>
 
 <style lang="scss">
+
+	.footer {
+		padding: 40px 0;
+
+		a {
+      color: $text-main;
+			text-decoration: none;
+		}
+
+		img {
+			height: 60px;
+			width: auto;
+			margin-right: 12px;
+		}
+
+		div {
+			position: relative;
+			display: inline-block;
+			top: -20px;
+		}
+	}
 
 	.container {
 		max-width: 1320px;

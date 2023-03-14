@@ -36,10 +36,6 @@
 			display: inline-block;
 			width: calc(50% - 11px);
 
-			&:first-of-type {
-				float: left;
-			}
-
       &:last-of-type {
         float: right;
       }
